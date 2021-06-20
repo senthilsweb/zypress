@@ -28,10 +28,10 @@ $ npm run start
 
 #build  docker image
 
-docker build -t web.frontend.nuxtjs:dev .
+docker build -t zypress:dev .
 
 #run the docker
-docker run -it -p 8000:80 web.frontend.nuxtjs:dev
+docker run -it -p 8000:80 zypress:dev
 
 #delete node_module folder and subfolders
 rm -r node_modules
