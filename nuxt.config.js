@@ -69,7 +69,8 @@ export default {
     '~/plugins/global.js'
   ],
   router: {
-    middleware: 'layoutMiddleware'
+    middleware: 'layoutMiddleware',
+    trailingSlash: true
   },
   /*
   ** Nuxt.js dev-modules
@@ -121,7 +122,6 @@ export default {
   },
   proxy: {
     '/api/': { target: process.env.API_URL, pathRewrite: {'^/api/': ''}, changeOrigin: true }
-    //'/api/': { target: 'http://67.205.183.127:1337/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
   },
   toast: {
     position: 'bottom-right',
@@ -164,9 +164,9 @@ export default {
   },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'http://localhost:9000',
-    appLogo: process.env.APP_LOGO || 'logo1.svg',
+    appLogo: process.env.APP_LOGO || 'logo.svg',
     bizAddress: process.env.BIZ_ADDRESS || 'NA',
-    apiURL: process.env.API_URL || 'http://18.191.103.61:8000/',
+    apiURL: process.env.API_URL || 'http://localhost:3000/',
   },
   privateRuntimeConfig: {
     apiSecret: process.env.API_SECRET

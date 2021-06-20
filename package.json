@@ -1,8 +1,8 @@
 {
   "name": "zypress",
   "version": "1.0.0",
-  "description": "Zypress is static site generator that's geared towards building blog and project documentation",
-  "author": "Senthilnathan",
+  "description": "Zypress is static site generator that's geared towards building personal websites, blogs and project documentations",
+  "author": "Senthilnathan Karuppaiah",
   "private": true,
   "scripts": {
     "dev": "nuxt",

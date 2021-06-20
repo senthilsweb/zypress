@@ -26,7 +26,6 @@
     </div>
     <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
       <div v-for="article of articles" :key="article.slug">
-       
         <div>
           <a href="#" class="inline-block">
             <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium" 

@@ -18,7 +18,7 @@
 import dochero from '@/components/docs/dochero.vue'
 import actionpanel from '@/components/docs/actionpanel.vue'
 export default {
-    layout: 'doc2',
+    layout: 'public',
     components: {
         dochero,
         actionpanel
