@@ -1,0 +1,110 @@
+<template>
+<div id="app">
+    <div class="pt-2 pb-2 sticky p-2 top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex">
+        <div class="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
+            <a class="overflow-hidden w-10 md:w-auto" href="/">
+                <span class="sr-only">Tailwind CSS home page</span>
+                <img tag="img" to="/" alt="Logo" width="200" class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-900-text.svg" />
+            </a>
+        </div>
+
+        <div class="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 pt-2 pb-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
+            <button type="button" class="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2">
+                <svg width="24" height="24" fill="none" class="text-gray-400 group-hover:text-gray-500 transition-colors duration-200">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>
+                    Quick search
+                    <span class="hidden sm:inline">
+                        for anything
+                    </span>
+                </span>
+                <span style="opacity: 1;" class="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md">
+                    <span class="sr-only">
+                        Press
+                    </span>
+                    <kbd class="font-sans">
+                        <abbr title="Command" class="no-underline">⌘</abbr></kbd><span class="sr-only"> and </span>
+                    <kbd class="font-sans">K</kbd><span class="sr-only"> to search</span></span>
+            </button>
+            <div class="lg:w-64 pl-8 flex-shrink-0 flex items-center justify-end space-x-6">
+                sds
+            </div>
+        </div>
+    </div>
+    <div class="w-full max-w-7xl mx-auto">
+        <div class="lg:flex">
+            <div id="sidebar" class="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block hidden">
+                <div id="navwrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0">
+                    <div class="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
+                    <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+                        <leftnavcolor />
+                        <docnav />
+                    </nav>
+                </div>
+            </div>
+            <div id="contentwrapper" class="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible">
+                <div class="w-full flex">
+                    <div class="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pb-24 lg:pb-16">
+                        <nuxt />
+                       
+                    </div>
+                    <div class="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
+                        <div class="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">
+                            <div class="mb-8">
+                                <toc :data="items"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+//lnbc
+// left-nav-color
+import leftnavcolor from '@/components/docs/left-nav-color.vue'
+import toc from '@/components/docs/toc.vue'
+import docnav from '@/components/docs/docnav.vue'
+
+export default {
+    components: {
+        leftnavcolor,
+        toc,
+        docnav
+    },
+    props: {
+
+    },
+    data() {
+        return {
+            items : []
+        };
+    },
+    methods: {
+
+    },
+     created() {
+          console.log("Registering events")
+        this.$nuxt.$on('evtDocs', (data) => {
+            console.log("Data--->")
+            console.log(JSON.stringify(data))
+            this.items = data;
+            console.log("<---Data")
+        });
+    },
+};
+</script>
+
+<style>
+a.nuxt-link-exact-active {
+    @apply bg-green-300;
+}
+
+a.nuxt-link-exact-active {
+    @apply border-green-900;
+}
+</style>

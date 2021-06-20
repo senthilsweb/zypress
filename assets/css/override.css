@@ -1,0 +1,6 @@
+.page {
+    @apply  border border-gray-300 pt-1 text-sm text-gray-700 hover:text-gray-500 focus:outline-none  transition duration-150 ease-in-out !important;
+  }
+  .cur-page {
+    @apply  bg-green-500 border-green-600 text-white font-semibold  hover:bg-green-700 hover:border-green-700 hover:text-white !important;
+  }

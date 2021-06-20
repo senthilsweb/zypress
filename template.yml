@@ -1,0 +1,67 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  resourceful - little functions doing big things
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 6
+
+# More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+Resources:
+
+  # RestApi:
+  #   Type: AWS::Serverless::Api
+  #   Properties:
+  #     StageName: dev
+
+  # ApiSfAdapter00:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: api-sf-adapter-00/
+  #     Handler: app.lambdaHandler
+  #     Runtime: nodejs10.x
+  #     Policies:
+  #       - AWSStepFunctionsFullAccess
+  #     Events:
+  #       ApiEndpoint:
+  #         Type: Api
+  #         Properties:
+  #           Path: /api/data
+  #           Method: post
+  #           RestApiId:
+  #             Ref: RestApi
+
+  # DynamoDb00:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: dynamodb-00/
+  #     Handler: app.lambdaHandler
+  #     Runtime: nodejs10.x
+  #     Policies:
+  #       - AmazonDynamoDBFullAccess
+
+  # GpFunction00:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: gpf-00/
+  #     Handler: app.lambdaHandler
+  #     Runtime: nodejs10.x
+
+  S3Uploader00:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location:
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:526237104669:applications/Serverless-S3-Uploader
+        SemanticVersion: 1.0.0
+
+  S3RekogBlur00:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location:
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:932998628582:applications/blur-faces-rekognition
+        SemanticVersion: 1.0.0
+      Parameters: 
+        InBucketName: prod-r0zar-resourceful-serverlesss3uploa-s3bucket-xmjryj8yinyo
+        OutBucketName: tickets-blurred-barcodes
