@@ -1,5 +1,4 @@
 
-import theme from '@nuxt/content-theme-docs'
 import { join } from 'path'
 export default {
   ssr: false,
