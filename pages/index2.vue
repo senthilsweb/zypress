@@ -1,5 +1,6 @@
 <template>
 <div>
+    <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-10">
    <div class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-10 lg:pb-28 lg:px-8">
   <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
     <div>
@@ -73,13 +74,14 @@
     </div>
   </div>
 </div>
+    </main>
 </div>
 </template>
 
 <script>
 
 export default {
-    layout: 'docs',
+    layout: 'public',
     components: {
       
     },
@@ -87,7 +89,7 @@ export default {
         $content,
         params
     }) {
-        const articles = await $content('casestudies', params.slug)
+        const articles = await $content('blog', params.slug)
             .only(['title', 'summary', 'coverimage', 'slug', 'tags','type'])
             .sortBy('createdAt', 'desc')
             .fetch()

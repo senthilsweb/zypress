@@ -1,13 +1,14 @@
 ---
 title: RPA in Application Monitoring
-path: /casestudy/Iyoshi-rpa-in-app-monitoring
+path: Iyoshi-rpa-in-app-monitoring
 date: 2021-06-04
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
 background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1622896834/sw/s-problem-definition_ls0j57.png
-author: Senthilnathan
+coverimage: https://source.unsplash.com/random
+author: Zypress
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1600574625/profile/undraw_male_avatar_323b_xfse7e.png
 type: Case Study
 tags:
   - Mobile Apps

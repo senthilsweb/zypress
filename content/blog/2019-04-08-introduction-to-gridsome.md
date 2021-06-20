@@ -6,8 +6,9 @@ summary: Gridsome is a Vue.js-powered, modern site generator for building the fa
 background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
-coverimage: https://images.unsplash.com/photo-1588512285341-c481fb6de19d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1406&q=80
-author: Senthilnathan
+coverimage: https://source.unsplash.com/random
+author: Senthilnathan Karuppaiah
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog
 tags:
   - Mobile Apps

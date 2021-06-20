@@ -12,6 +12,23 @@ link: https://codesandbox.io/embed/nuxt-content-l164h?hidenavigation=1&theme=dar
 # 02 Installation
 Add `@nuxt/content` dependency to your project:
 
+# Welcome to Zypress
+
+This a demo application to showcase the development of documentaion website
+
+```
+function getList(obj)
+{
+  alert("Hello")
+}
+```
+
+<alert>
+
+Hello Sureshbabu
+
+</alert>
+
 
 
 <code-group>

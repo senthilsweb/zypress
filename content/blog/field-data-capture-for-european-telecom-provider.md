@@ -7,7 +7,8 @@ background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
 coverimage: https://images.unsplash.com/photo-1588514727390-91fd5ebaef81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=639&q=80
-author: Varman
+author: Senthilnathan Karuppaiah
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Case Study
 tags:
   - Mobile Apps

@@ -1,5 +1,6 @@
 <template>
-<div class="">
+<div>
+    <main class="mx-auto max-w-7xl px-4">
     <!--
   This example requires Tailwind CSS v2.0+ 
   
@@ -22,8 +23,8 @@
             <div class="hidden lg:block bg-green-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
             <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
                 <div>
-                    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">{{casestudy.type}}</h2>
-                    <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{casestudy.title}}</h3>
+                    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">{{article.type}}</h2>
+                    <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{article.title}}</h3>
                 </div>
             </div>
             <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
@@ -39,7 +40,7 @@
                     <div class="relative text-base mx-auto max-w-prose lg:max-w-none">
                         <figure>
                             <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                                <img class="rounded-lg shadow-lg object-cover object-center" src="https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376">
+                                <img class="rounded-lg shadow-lg object-cover object-center" src="https://source.unsplash.com/random/600×400?technology,Bot,nature,underwater&ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376">
 
                                 <div class="absolute inset-0 bg-gradient-to-t from-green-600 via-green-600 opacity-90"></div>
 
@@ -54,7 +55,7 @@
                     </div>
                     
                     <ul class="z-20 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6">
-                        <li v-for="technology of casestudy.technologies" :key="technology.icon">
+                        <li v-for="technology of article.technologies" :key="technology.icon">
                             <div class="space-y-4">
                                 <img class="mx-auto h-10 w-10 lg:w-10 lg:h-10" v-bind:src="'https://raw.githubusercontent.com/get-icon/geticon/b1aa317dee1a9b6d7ad739887eb4c09525f9cffd/icons/' + technology.icon" :alt="technology.name">
                                 <div class="space-y-2">
@@ -69,19 +70,19 @@
                 </div>
                 <div class="mt-8 lg:mt-0">
                     <article class="prose md:prose-sm">
-                        <nuxt-content :document="casestudy" />
+                        <nuxt-content :document="article" />
                     </article>
                 </div>
             </div>
-           
         </div>
     </div>
+    </main>
 </div>
 </template>
 
 <script>
 export default {
-    layout:"docs",
+    layout:"public",
     components: {
 
     },
@@ -89,9 +90,9 @@ export default {
         $content,
         params
     }) {
-        const casestudy = await $content('casestudies', params.slug).fetch()
+        const article = await $content('blog', params.slug).fetch()
         return {
-            casestudy
+            article
         }
     }
 }

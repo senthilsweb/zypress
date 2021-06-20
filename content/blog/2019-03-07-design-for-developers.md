@@ -8,8 +8,9 @@ summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earu
 background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
-coverimage: https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80
-author: Varman
+coverimage: https://source.unsplash.com/random
+author: Senthilnathan Karuppaiah
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog
 tags:
   - Mobile Apps
