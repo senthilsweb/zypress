@@ -23,13 +23,13 @@
                     <!--Body (Ends)-->
                     <!--Footer (Starts)-->
                         <div class="flex leading-6 font-medium">
-                            <NuxtLink v-if="prev" :to="prev.path" class="flex mr-8 transition-colors duration-200 hover:text-gray-900">
+                            <NuxtLink v-if="prev" :to="prev.path+'/'" class="flex mr-8 transition-colors duration-200 hover:text-gray-900">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                                 </svg>
                                 {{ prev.title }}
                             </NuxtLink>
-                            <NuxtLink v-if="next" :to="next.path" class="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
+                            <NuxtLink v-if="next" :to="next.path+'/'" class="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
                                 {{ next.title }}
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

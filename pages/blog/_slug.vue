@@ -50,7 +50,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">
+                    <div v-if="article.technologies" class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">
                         <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Technology Stack</h2>
                     </div>
                     
