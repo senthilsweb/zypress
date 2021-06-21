@@ -4,7 +4,7 @@
         <div class="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
             <a class="overflow-hidden w-10 md:w-auto" href="/">
                 <span class="sr-only">Personal website</span>
-                <img tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto sm:h-16" src="https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg" />
+                <img tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto sm:h-16" :src="settings.branding.logo.source" />
             </a>
         </div>
         <div class="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 pt-2 pb-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
@@ -45,14 +45,14 @@
 <script>
 //lnbc
 // left-nav-color
-
+import settings from "@/store/menuitems.json";
 export default {
     props: {
 
     },
     data() {
         return {
-            items: []
+            settings
         };
     },
     methods: {
@@ -73,3 +73,5 @@ a.nuxt-link-exact-active {
     @apply border-green-900;
 }*/
 </style>
+
+
