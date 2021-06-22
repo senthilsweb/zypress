@@ -2,14 +2,28 @@ package main
 
 import (
 	"encoding/json"
-	"log"
+	"flag"
+	"fmt"
+	"io"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
+	"runtime"
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/natefinch/lumberjack"
+	log "github.com/sirupsen/logrus"
 )
+
+var stage string
+
+func init() {
+	log.Info("Application init function start")
+	initLogger()
+	log.Info("Application init function end.")
+}
 
 // spaHandler implements the http.Handler interface, so we can use it
 // to respond to HTTP requests. The path to the static directory and
@@ -55,6 +69,15 @@ func (h spaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	port := flag.String("p", "8100", "port to serve on")
+	indexDoc := flag.String("i", "index.html", "index document to load")
+	directory := flag.String("d", "dist", "the directory of static file to web host")
+	env := flag.String("e", "dev", "dev or prod enviroment?")
+	stage = *env
+	log.Info(env, port, indexDoc, directory)
+	flag.Parse()
+
 	router := mux.NewRouter()
 
 	router.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
@@ -62,16 +85,64 @@ func main() {
 		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 	})
 
-	spa := spaHandler{staticPath: "dist", indexPath: "index.html"}
+	spa := spaHandler{staticPath: *directory, indexPath: *indexDoc}
 	router.PathPrefix("/").Handler(spa)
 
-	srv := &http.Server{
-		Handler: router,
-		Addr:    "127.0.0.1:8000",
-		// Good practice: enforce timeouts for servers you create!
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
+	fmt.Println("Server starting at port " + *port)
+
+	//log.Fatal(http.ListenAndServe(":"+port, a.Negroni))
+	listener, err := net.Listen("tcp", ":"+*port)
+	if err != nil {
+		log.Fatal(err)
+	}
+	done := make(chan bool)
+	go http.Serve(listener, router)
+	fmt.Println("Started Server at port " + *port)
+	<-done
+}
+
+func initLogger() {
+	logfilepath := AppExecutionPath() + "/" + os.Args[0] + ".log"
+	log.Info("logfilepath = " + logfilepath)
+	// Set the Lumberjack logger
+	ljack := &lumberjack.Logger{
+		Filename:   logfilepath,
+		MaxSize:    1,
+		MaxBackups: 3,
+		MaxAge:     3,
+		LocalTime:  true,
 	}
 
-	log.Fatal(srv.ListenAndServe())
+	//log := logrus.New()
+	//
+	// Output to stdout instead of the default stderr
+	// Can be any io.Writer, see below for File example
+
+	// Only log the warning severity or above.
+	log.SetLevel(log.InfoLevel)
+
+	mWriter := io.MultiWriter(os.Stdout, ljack)
+	log.SetOutput(mWriter)
+	log.SetFormatter(&log.JSONFormatter{})
+	log.WithFields(log.Fields{
+		"Runtime Version": runtime.Version(),
+		"Number of CPUs":  runtime.NumCPU(),
+		"Arch":            runtime.GOARCH,
+	}).Info("Application Initializing")
+
+	if stage == "Dev" {
+		log.SetFormatter(&log.TextFormatter{ForceColors: true, FullTimestamp: true, TimestampFormat: time.RFC1123Z})
+	} else {
+		log.SetFormatter(&log.JSONFormatter{})
+	}
+}
+
+// AppExecutionPath returns the relative path where the application is executing
+func AppExecutionPath() string {
+	mydir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(mydir)
+	return mydir
 }
