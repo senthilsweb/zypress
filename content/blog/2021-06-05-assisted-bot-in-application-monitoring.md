@@ -2,7 +2,7 @@
 title: Assisted Bot in Application Monitoring
 path: 
 date: 2021-06-04
-summary: The application monitoring process involves various web console monitoring, **SOAP web services** monitoring, Querying 3 (three) different **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard.
+summary: Application monitoring process involves various web console monitoring, **SOAP web services** monitoring, Querying 3 (three) different **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard.
 background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
@@ -49,7 +49,7 @@ technologies:
 ---
 ## Challenges Faced
 
-The application monitoring process involves various web console monitoring, **SOAP web services** monitoring, Querying 3 (three) different **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard. 
+One of the application monitoring process where I was engaged in the past involved various web console monitoring, **SOAP web services** monitoring, Querying multiple **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard. 
 
 All of these needs to be monitored every **30 minutes** and then notifying various Infrastructure groups using different notification and alerting mechanism i.e. Skype, Whatsapp and Email as instructed for taking necessary actions to maintain Business continuity and Business as-usual.  
 
@@ -57,7 +57,7 @@ The time taken to complete the monitoring and notification for single iteration 
 
 ![background](https://res.cloudinary.com/nathansweb/image/upload/v1622896834/sw/s-problem-definition_ls0j57.png)
 
-## Solution: Bots for the regular repetable task
+## Solution: Human assisted bots for the repetable task
 
 TBD
 

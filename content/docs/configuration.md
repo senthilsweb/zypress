@@ -2,7 +2,7 @@
 title: Configuration
 description: 'You can configure @nuxt/content with the content property in your nuxt.config.js.'
 category: Getting started
-position: 3
+position: 2
 ---
 # 03 Configuration
 

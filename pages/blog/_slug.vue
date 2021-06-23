@@ -40,10 +40,8 @@
                     <div class="relative text-base mx-auto max-w-prose lg:max-w-none">
                         <figure>
                             <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                                <img class="rounded-lg shadow-lg object-cover object-center" src="https://source.unsplash.com/random/600×400?technology,Bot,nature,underwater&ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376">
-
+                                <img class="rounded-lg shadow-lg object-cover object-center" src="https://source.unsplash.com/random/400×300?technology,Bot&ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street">
                                 <div class="absolute inset-0 bg-gradient-to-t from-green-600 via-green-600 opacity-90"></div>
-
                             </div>
                             <figcaption class="mt-3 flex text-sm text-gray-500">
                                 <span class="ml-2"></span>
@@ -53,7 +51,6 @@
                     <div v-if="article.technologies" class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">
                         <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Technology Stack</h2>
                     </div>
-                    
                     <ul class="z-20 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6">
                         <li v-for="technology of article.technologies" :key="technology.icon">
                             <div class="space-y-4">
