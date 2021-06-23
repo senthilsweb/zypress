@@ -1,0 +1,15 @@
+{
+  "branding" : {
+    "logo":{
+        "source" : "https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg"
+    }
+  },
+  "bannerHeaderFlashNews":{
+    "content" : "",
+    "active":false
+  },
+  "bannerFooterCookieConsent":{
+    "content" : "",
+    "active":false
+  }
+}

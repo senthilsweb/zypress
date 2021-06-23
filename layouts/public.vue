@@ -45,7 +45,7 @@
 <script>
 //lnbc
 // left-nav-color
-import settings from "@/store/menuitems.json";
+import settings from "@/store/settings.json";
 export default {
     props: {
 

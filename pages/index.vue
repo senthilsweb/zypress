@@ -39,14 +39,12 @@
                                     </p>
                                     <div class="flex space-x-1 text-sm text-gray-500">
                                         <time datetime="article.createdAt">
-                                            {{article.createdAt}}
+                                            {{article.createdAt | moment("DD-MMM-YYYY")}}
                                         </time>
                                         <span aria-hidden="true">
                                             &middot;
                                         </span>
-                                        <span>
-                                            6 min read
-                                        </span>
+                                        <!--<ReadingTime :content="article.body"></ReadingTime>-->
                                         <span aria-hidden="true">
                                             &middot;
                                         </span>
@@ -68,7 +66,7 @@
                 <!--Main (Ends)-->
             </div>
             <div class="hidden xl:text-sm xl:block flex-none w-64 mr-8">
-                <about :aboutus="about" :profile="teams" />
+                <about :aboutus="about.about" :profile="teams" />
             </div>
         </div>
     </div>
@@ -93,7 +91,6 @@ export default {
         const teams = await $content('profile/teams').fetch()
         const about = await $content('profile/about').fetch()
         return {
-
             articles,
             teams,
             about
