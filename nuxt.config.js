@@ -1,7 +1,7 @@
 
 import { join } from 'path'
 export default {
-  ssr: true,
+  ssr: false,
   components: true,
   server: {
     port: 9000 // default: 3000
