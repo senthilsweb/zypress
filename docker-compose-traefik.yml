@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  traefik:
+    image: traefik:v2.3
+    command:
+      - --log.level=INFO
+      - --api.insecure=true
+      - --entrypoints.web.address=:80
+      - --providers.docker
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    labels:
+      traefik.http.routers.dash.rule: Host(`dash.senthilsweb.com`)
+      traefik.http.routers.dash.service: api@internal
+
+    ports:
+      - "80:80"
+
+  hello:
+    image: containous/whoami
+    labels:
+      traefik.http.routers.hello.rule: Host(`hello.senthilsweb.com`)
+
+  whoami:
+    image: jwilder/whoami
+    labels:
+      traefik.http.routers.whoami.rule: Host(`whoami.senthilsweb.com`)
+
+  zypress:
+    image: 932612418290.dkr.ecr.us-east-2.amazonaws.com/zypress:latest
+    labels:
+      traefik.http.routers.zypress.rule: Host(`blog.senthilsweb.com`)
