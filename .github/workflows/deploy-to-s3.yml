@@ -6,7 +6,7 @@ name: Deploy to AWS S3
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+  #  branches: [ master ]
   #pull_request:
   #  branches: [ main ]
 
@@ -31,7 +31,6 @@ jobs:
       - name: npm install & npm build
         run: |
           npm install
-          npm run build
           npm run generate
           
       - name: S3 Sync
