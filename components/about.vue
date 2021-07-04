@@ -13,7 +13,7 @@
                     <div class="text-lg m-2">
                         <p class="text-base text-gray-500">{{profile.bio}}</p>
                     </div>
-
+<!--
                     <ul class="flex space-x-5 m-2">
                         <li>
                             <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -32,6 +32,18 @@
                             </a>
                         </li>
                     </ul>
+-->
+
+                 <ul class="flex space-x-5 m-2">
+                    <li v-if="!item.hidden" v-for="item in profile.social" :key="item.title">
+                        <a v-bind:href="item.to" class="text-gray-400 hover:text-gray-500">
+                            <span class="sr-only">{{item.title}}</span>
+                                <svg class="w-5 h-5" fill="currentColor" :viewBox="item.viewBox" aria-hidden="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" v-for="data in item.svg" :key="data.d" :d="data.d"></path>
+                                </svg>
+                        </a>
+                    </li>
+                </ul>
                 </div>
             </li>
         </ul>
