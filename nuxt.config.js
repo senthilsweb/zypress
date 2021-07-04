@@ -1,10 +1,10 @@
 
 import { join } from 'path'
 export default {
-  ssr:true,
+  ssr:false,
   components: true,
   server: {
-    port: 9000 // default: 3000
+    port: process.env.APP_PORT || '3000', // default: 3000
   },
   generate: {
     fallback: '404.html'
@@ -15,11 +15,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.APP_NAME || process.env.npm_package_name || '',
+    titleTemplate: (process.env.APP_NAME || process.env.npm_package_name || '') + ' - %s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.APP_DESCRIPTION || process.env.npm_package_description || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
@@ -66,7 +67,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/global.js'
+    {src:'~/plugins/global.js', ssr: false}
   ],
   router: {
     middleware: 'layoutMiddleware',
@@ -163,10 +164,11 @@ export default {
     ]
   },
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'http://localhost:9000',
+    port:process.env.APP_PORT || '3000',
+    baseURL: (process.env.BASE_URL || 'http://localhost') + process.env.APP_PORT || '3000',
+    apiURL: (process.env.API_URL || 'http://localhost') + process.env.APP_PORT || '3000',
     appLogo: process.env.APP_LOGO || 'logo.svg',
     bizAddress: process.env.BIZ_ADDRESS || 'NA',
-    apiURL: process.env.API_URL || 'http://localhost:3000/',
   },
   privateRuntimeConfig: {
     apiSecret: process.env.API_SECRET

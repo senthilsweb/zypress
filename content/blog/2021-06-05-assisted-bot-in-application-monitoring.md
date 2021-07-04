@@ -2,7 +2,6 @@
 title: Assisted Bot in Application Monitoring
 path: 
 date: 2021-06-04
-summary: Application monitoring process involves various web console monitoring, **SOAP web services** monitoring, Querying 3 (three) different **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard.
 background: background goes here
 introduction: introduction goes here
 industries: [Healthcare, Telecom]
@@ -47,6 +46,11 @@ technologies:
     version: 2.7.3
     icon: docker.svg
 ---
+
+Application monitoring process involves various web console monitoring, SOAP web services monitoring, Querying multiple databases for informations, inbound emails received in a mailbox and nGINX logs monitoring.
+
+<!--more-->
+
 ## Challenges Faced
 
 One of the application monitoring process where I was engaged in the past involved various web console monitoring, **SOAP web services** monitoring, Querying multiple **Oracle** databases for informations, **Email processing** sent to a particular account and **nGINX logs** monitoring using **nGINX+** dashboard. 

@@ -1,3 +1,9 @@
 {
-    "about": "Personal blog to share my thoughts and experiences" 
+    "name": "Senthilnathan Karuppaiah",
+    "coverpicture": "https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png",
+    "title": "Solutions Architect",
+    "bio": "A seasond hands-on Enterprise Solutions Architect spanning more than 2 decades of experience in product engineering and solution design for SME to Fortune 100 customers acorss the globe.",
+    "slug": "",
+    "linkedin": "https://www.linkedin.com/in/senthilsweb/",
+    "twitter": "/"
 }

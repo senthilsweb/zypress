@@ -7,11 +7,11 @@
                         <img class="object-cover shadow-lg rounded-lg" :src="profile.coverpicture" alt="">
                     </div>
                     <div class="text-lg leading-6 font-medium space-y-1 m-2">
-                        <h3>{{profile.name}}</h3>
-                        <p class="text-indigo-600">{{profile.title}}</p>
+                        <h3 class="text-xl font-bold text-gray-900">{{profile.name}}</h3>
+                        <!--<p class="text-sm font-medium text-gray-500">{{profile.title}}</p>-->
                     </div>
                     <div class="text-lg m-2">
-                        <p class="text-gray-500">{{profile.bio}}</p>
+                        <p class="text-base text-gray-500">{{profile.bio}}</p>
                     </div>
 
                     <ul class="flex space-x-5 m-2">
@@ -45,7 +45,7 @@ export default {
     },
     props: {
         profile: {},
-        aboutus: String
+        aboutus: {}
     },
     filters: {
         prune(val, len) {

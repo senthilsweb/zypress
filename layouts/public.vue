@@ -2,9 +2,9 @@
 <div id="app">
     <div class="pt-2 pb-2 sticky p-2 top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex">
         <div class="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
-            <a class="overflow-hidden w-10 md:w-auto" href="/">
+            <a class="w-10 md:w-auto" href="/">
                 <span class="sr-only">Personal website</span>
-                <img tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto sm:h-16" :src="settings.settings.logo" />
+                <img tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto sm:h-16 fill-current text-green-600" :src="$config.appLogo" />
             </a>
         </div>
         <div class="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 pt-2 pb-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
@@ -45,14 +45,14 @@
 <script>
 //lnbc
 // left-nav-color
-import settings from "@/store/settings.json";
+
 export default {
     props: {
 
     },
     data() {
         return {
-            settings
+           
         };
     },
     methods: {

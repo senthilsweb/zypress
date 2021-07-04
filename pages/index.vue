@@ -4,7 +4,7 @@
         <div id="navwrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0">
             <div class="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
             <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
-                <LeftNavColor />
+                <LeftNavColor :data="settings"/>
             </nav>
         </div>
     </div>
@@ -21,7 +21,7 @@
                                     {{article.title}}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">
-                                    {{article.summary}}
+                                    {{article.description}}
                                 </p>
                             </NuxtLink>
                             <div class="mt-6 flex items-center">
@@ -66,7 +66,7 @@
                 <!--Main (Ends)-->
             </div>
             <div class="hidden xl:text-sm xl:block flex-none w-64 mr-8">
-                <about :aboutus="about.about" :profile="teams" />
+                <about :aboutus="about" :profile="about" />
             </div>
         </div>
     </div>
@@ -74,18 +74,20 @@
 </template>
 
 <script>
-
+import {
+    mapState
+} from 'vuex'
 export default {
     layout: 'public',
     components: {
-        
+
     },
     async asyncData({
         $content,
         params
     }) {
         const articles = await $content('blog', params.slug)
-            .only(['title', 'summary', 'coverimage', 'slug', 'tags', 'type','author','avatar','createdAt'])
+            .only(['title', 'description', 'coverimage', 'slug', 'tags', 'type', 'author', 'avatar', 'createdAt'])
             .sortBy('createdAt', 'desc')
             .fetch()
         const teams = await $content('profile/teams').fetch()
@@ -95,7 +97,20 @@ export default {
             teams,
             about
         }
-    }
+    },
+    async fetch({
+        store,
+        error
+    }) {
+        try {
+            await store.dispatch('settings/fetchSettings')
+        } catch (e) {}
+    },
+    computed: mapState({
+        settings: state => state.settings.settings
+    }),
+    // call fetch only on client-side
+    fetchOnServer: false
 }
 </script>
 
