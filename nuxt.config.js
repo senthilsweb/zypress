@@ -1,7 +1,7 @@
 
 import { join } from 'path'
 export default {
-  ssr:false,
+  ssr:true,
   components: true,
   server: {
     port: process.env.APP_PORT || '3000', // default: 3000

@@ -1,7 +1,8 @@
 <template>
 <div>
     <ul>
-        <li v-if="!item.hidden" v-for="item in data.settings.navigation" :key="item.title">
+        <!-- <li v-if="!item.hidden" v-for="item in data.settings.navigation" :key="item.title">-->
+        <li v-if="!item.hidden" v-for="item in links.settings.navigation" :key="item.title">
             <a v-bind:href="item.to" class="flex items-center px-3 hover:text-gray-900 transition-colors duration-200 mb-4">
                 <div class="mr-3 rounded-md bg-gradient-to-br" :class="item.class">
                     <svg class="h-6 w-6" viewBox="0 0 24 24">
@@ -15,13 +16,13 @@
 </div>
 </template>
 <script>
-import {mapState} from 'vuex'
+import links from "@/store/settings.json";
 
 export default {
     name: "left-nav",
     data() {
-        return {
-           
+       return {
+            links
         }
     },
     props: {
@@ -32,16 +33,6 @@ export default {
     },
     created() {
 
-    },
-      async fetch({store,error}) {
-        try {
-            await store.dispatch('settings/fetchSettings')
-        } catch (e) {}
-    },
-    computed: mapState({
-        settings : state => state.settings.settings
-    }),
-    // call fetch only on client-side
-    fetchOnServer: false
+    }
 }
 </script>
