@@ -17,7 +17,7 @@
                 <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-10">
                     <!--Body (Starts)-->
                     <div class="inset-0">
-                        <article class="max-w-full p-5 prose md:prose-lg">
+                        <article class="max-w-full p-5 prose md:prose-md">
                             <nuxt-content :document="docs" />
                         </article>
                     </div>

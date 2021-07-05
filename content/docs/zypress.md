@@ -1,0 +1,81 @@
+---
+title: Zypress
+category: Getting started
+position: 1
+items-must:
+  - Node
+  - npm
+  - VS.Code or any IDE of your choice
+items-optional:
+  - Docker desktop
+  - Docker compose
+  - Go
+link: https://codesandbox.io/embed/nuxt-content-l164h?hidenavigation=1&theme=dark
+---
+
+# Introduction
+Zypress is an open source, professional publishing platform built on a modern Jamstack technology stack — Vue.js, Nuxt.js, TailwindCss
+
+# Installation 
+
+Learn how to get zypress up and running in your local development environment and production nginx server or docker container or embedded golang binary or in the cloud i.e. AWS S3 or EC2 instance.
+
+## Pre-requisites
+
+### Must have
+<list :items="items-must"></list>
+
+### Optional
+<list :items="items-optional"></list>
+
+
+
+## Development Environment Setup
+
+### Clone the repository
+
+```
+git clone https://github.com/senthilsweb/zypress
+```
+### Install dependencies
+
+```
+npm i
+```
+
+### Run in development mode
+
+```
+npm run dev
+```
+
+## Build for production
+
+### Build
+
+```
+npm run generate
+```
+
+### Run in production mode
+
+```
+npm run start
+```
+
+## Deployment
+
+### Deploy to [surge.sh] (https://www.surge.sh)
+
+* Change directory to `dist`
+* Run the below command. 
+
+```
+surge
+```
+
+<alert>
+
+It will ask for your email to sign-up for the first time and then ask for your confirmation to override the default `subdomain` name.
+
+</alert>

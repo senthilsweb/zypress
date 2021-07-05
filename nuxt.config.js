@@ -167,7 +167,7 @@ export default {
     port:process.env.APP_PORT || '3000',
     baseURL: (process.env.BASE_URL || 'http://localhost') + process.env.APP_PORT || '3000',
     apiURL: (process.env.API_URL || 'http://localhost') + process.env.APP_PORT || '3000',
-    appLogo: process.env.APP_LOGO || 'logo.svg',
+    appLogo: process.env.APP_LOGO || '/logo-zypress.svg',
     bizAddress: process.env.BIZ_ADDRESS || 'NA',
   },
   privateRuntimeConfig: {
