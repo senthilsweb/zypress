@@ -1,11 +1,11 @@
 <template>
 <div class="lg:flex">
-    <div id="sidebar" class="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block hidden">
+    <div id="sidebar" class="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block" :class="mobileNav==false? 'hidden' : 'block'">
         <div id="navwrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0">
-            <div class="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
+            <div :class="mobileNav==false? 'hidden' : 'block'" class="lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
             <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
                 <!--<LeftNavColor/>-->
-                <LeftNavColor :data="links"/>
+                <LeftNavColor :data="links" />
             </nav>
         </div>
     </div>
@@ -75,21 +75,34 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {
+    mapState
+} from 'vuex'
 export default {
     layout: 'public',
     head: {
-    title: 'Home page',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Recent blogs'
-      }
-    ],
-  },
+        title: 'Home page',
+        meta: [{
+            hid: 'description',
+            name: 'description',
+            content: 'Recent blogs'
+        }],
+    },
     components: {
 
+    },
+    data() {
+        return {
+            mobileNav: false
+        }
+    },
+    created() {
+        this.$nuxt.$on('evtFloatingButtonClick', (data) => {
+            this.mobileNav = !this.mobileNav
+        });
+    },
+    beforeDestroy() {
+        this.$nuxt.$off('evtFloatingButtonClick');
     },
     async asyncData({
         $content,

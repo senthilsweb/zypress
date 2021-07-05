@@ -4,7 +4,10 @@
         <div class="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
             <a class="w-10 md:w-auto" href="/">
                 <span class="sr-only">Personal website</span>
-                <img tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto sm:h-16 fill-current text-green-600" :src="$config.appLogo" />
+                <nuxt-link tag="img" to="/" alt="Logo" class="-ml-4 h-24 w-auto fill-current text-green-600 hidden md:block lg:block" :src="$config.appLogo">
+                </nuxt-link>
+                <nuxt-link tag="img" to="/" alt="Logo" class="h-10 -ml-4 fill-current text-green-600 md:hidden lg:hidden" src="/logo-zypress-mobile.png">
+                </nuxt-link>
             </a>
         </div>
         <div class="flex-auto border-b border-gray-200 h-18 flex items-center justify-between px-4 pt-2 pb-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
@@ -39,6 +42,16 @@
     <div class="w-full max-w-7xl mx-auto">
         <nuxt />
     </div>
+    <!--Floating Menu button in mobileview (Start)-->
+    <button type="button" @click="$nuxt.$emit('evtFloatingButtonClick')" class="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 text-white block lg:hidden">
+        <span class="sr-only">Open site navigation</span>
+        <svg width="24" height="24" fill="none" class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform"  :class="toggleMobileNavButton?'opacity-0 scale-80' : ''">
+            <path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <svg width="24" height="24" fill="none" class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform" :class="!toggleMobileNavButton?'opacity-0 scale-80' : ''">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </button>
 </div>
 </template>
 
@@ -52,14 +65,19 @@ export default {
     },
     data() {
         return {
-           
-        };
+            toggleMobileNavButton: false
+        }
     },
     methods: {
 
     },
     created() {
-
+        this.$nuxt.$on('evtFloatingButtonClick', (data) => {
+            this.toggleMobileNavButton = !this.toggleMobileNavButton
+        });
+    },
+    beforeDestroy() {
+        this.$nuxt.$off('evtFloatingButtonClick');
     },
 };
 </script>
@@ -73,5 +91,3 @@ a.nuxt-link-exact-active {
     @apply border-green-900;
 }*/
 </style>
-
-
