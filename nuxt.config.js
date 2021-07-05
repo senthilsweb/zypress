@@ -1,7 +1,7 @@
 
 import { join } from 'path'
 export default {
-  ssr:true,
+  ssr:false,
   components: true,
   server: {
     port: process.env.APP_PORT || '3000', // default: 3000
@@ -70,8 +70,7 @@ export default {
     {src:'~/plugins/global.js', ssr: false}
   ],
   router: {
-    middleware: 'layoutMiddleware',
-    trailingSlash: false
+    middleware: 'layoutMiddleware'
   },
   /*
   ** Nuxt.js dev-modules

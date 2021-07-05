@@ -1,6 +1,6 @@
 ---
-title: Zypress
-category: Getting started
+title: Getting started
+category: User guide
 position: 1
 items-must:
   - Node
@@ -22,13 +22,13 @@ Learn how to get zypress up and running in your local development environment an
 
 ## Pre-requisites
 
-### Must have
+### Mandatory
+
 <list :items="items-must"></list>
 
 ### Optional
+
 <list :items="items-optional"></list>
-
-
 
 ## Development Environment Setup
 
@@ -37,6 +37,7 @@ Learn how to get zypress up and running in your local development environment an
 ```
 git clone https://github.com/senthilsweb/zypress
 ```
+
 ### Install dependencies
 
 ```
@@ -45,9 +46,25 @@ npm i
 
 ### Run in development mode
 
-```
-npm run dev
-```
+
+<code-group>
+  
+  <code-block label="NPM" active>
+
+  ```bash
+  npm run dev
+  ```
+  </code-block>
+<code-block label="Yarn">
+
+  ```bash
+  yarn dev
+  ```
+  </code-block>
+  
+</code-group>
+
+
 
 ## Build for production
 
@@ -65,6 +82,16 @@ npm run start
 
 ## Deployment
 
+> It is assumed that you would like to deploy your website in [surge](https/surge.sh), a Static web publishing for Front-End Developers
+
+### subdomain configuration
+
+cd into '/static' folder and edit the `CNAME` file by replacing `senthilsweb` with your choice of the subdomain.
+
+```
+senthilsweb.surge.sh
+```
+
 ### Deploy to [surge.sh] (https://www.surge.sh)
 
 * Change directory to `dist`
@@ -76,6 +103,6 @@ surge
 
 <alert>
 
-It will ask for your email to sign-up for the first time and then ask for your confirmation to override the default `subdomain` name.
+It will ask for your email to sign-up for the first time and then it will ask for your confirmation to override the default `subdomain` name.
 
 </alert>
