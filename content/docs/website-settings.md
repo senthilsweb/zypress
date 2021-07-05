@@ -1,17 +1,18 @@
 ---
-title: Configuration
+title: Website Configuration
 category: User guide
 position: 2
 ---
 
 # Introduction
-Zypress is an open source, professional publishing platform built on a modern Jamstack technology stack — Vue.js, Nuxt.js, TailwindCss
+This guide walks you thru the initial application wide configuration to fit to your branding and requirements. All of the configurations are static and design time configs meaning it requires re-build and re-dpeloyment to take the new configuration in effect.
 
 # Website Configurations 
 
 Zypress comes with intial defaults however you can override by editing the 
 
 * `.env` file in the root
+* and, `/content/settings.json`
 * and, `/content/profile/about.json`
 
 ## Application Defaults

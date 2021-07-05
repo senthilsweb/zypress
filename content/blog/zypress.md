@@ -88,11 +88,13 @@ design-goals:
   - Minimalistic design
   - UX standardization
   - Mobile optimized
+  - Built in CI/CD for build automation and deployment thru Github action
+  - Deploy anywhere i.e. AWS S3, Any other serverless static website hosting, docker, embedded and filesystem based golang binary for Mac, Windows and Linux
 ---
 
 ![background](https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg)
 
-Zypress is a Vue.js based Jamstack framework weaved using of NuxtJS + Tailwindcss to rapidly build modern websites any thing you can imagine. It comes preloaded with a personal website stater-kit to power blog and documenation websites.
+Zypress is a Vue.js based Jamstack framework created using of NuxtJS + Tailwindcss to rapidly build modern websites any thing you can imagine. It comes preloaded with a personal website stater-kit to power blog and documenation websites.
 
 <!--more-->
 
@@ -100,7 +102,11 @@ Zypress is a Vue.js based Jamstack framework weaved using of NuxtJS + Tailwindcs
 I got introduced to Vue.JS then to tailwindcss and Nuxt.js and immediately fell in love with the Nuxt (Vue.js) Power, Flexiblity and Easy to learn nature of the framework. Adding Tailwindcss (tailwind.UI) to Nuxt elevated the overall design, development and user experience and I decided to start building a generic high level web development framework with the following design goals and the result is zypress (inspired by the name Vuepress) which I open-sourced to the community today, 4th July 2021 and committed to work on this personal project during my weekends and free time.
 
 
-## Zypress Need and Design Goals
+## Requirements and Design Goals
+
+The primary requirement I built <badge>Zypress</badge> is to power my personal website and blog.
+
+### Design Goals
 
 <list :items="design-goals"></list>
 
