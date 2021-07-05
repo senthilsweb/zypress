@@ -1,6 +1,5 @@
 # Zypress 
-
-Zypress is static site generator that's geared towards building personal websites, blogs and project documentations
+Zypress is a Vue.js based Jamstack framework created using of NuxtJS + Tailwindcss to rapidly build modern websites any thing you can imagine. It comes preloaded with a personal website stater-kit to power blog and documenation websites.
 
 ## Pre-requisites
 
@@ -27,26 +26,5 @@ $ npm run generate
 
 #launch server
 $ npm run start
-
-#build  docker image
-
-docker build -t zypress:dev .
-
-#run the docker
-docker run -it -p 8000:80 zypress:dev
-
-#delete node_module folder and subfolders
-rm -r node_modules
-
-#Remove any stopped containers and all unused images (not just dangling images)
-docker system prune -a
-
-#Remove dangling images
-docker images -f dangling=true
-
-#Remove
-docker image prune
-
-```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
