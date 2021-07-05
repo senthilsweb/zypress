@@ -91,9 +91,6 @@ design-goals:
   - Built in CI/CD for build automation and deployment thru Github action
   - Deploy anywhere i.e. AWS S3, Any other serverless static website hosting, docker, embedded and filesystem based golang binary for Mac, Windows and Linux
 ---
-
-![background](https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg)
-
 Zypress is a Vue.js based Jamstack framework created using of NuxtJS + Tailwindcss to rapidly build modern websites any thing you can imagine. It comes preloaded with a personal website stater-kit to power blog and documenation websites.
 
 <!--more-->

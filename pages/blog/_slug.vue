@@ -20,7 +20,7 @@
 -->
         <div class="bg-white overflow-hidden">
             <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                <div class="hidden lg:block bg-green-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
+                <div class="hidden lg:block absolute top-0 bottom-0 left-3/4 w-screen" :class="article.rightStripColor"></div>
                 <div class="mx-auto text-base max-w-prose lg:max-w-none">
                     <div>
                         <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{article.title}}</h3>
@@ -36,11 +36,11 @@
                             </defs>
                             <rect width="404" height="384" fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)" />
                         </svg>
-                        <div class="relative text-base mx-auto max-w-prose lg:max-w-none">
+                        <div v-if="article.coverimage" class="relative text-base mx-auto max-w-prose lg:max-w-none">
                             <figure>
                                 <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                                    <img class="rounded-lg shadow-lg object-cover object-center" src="https://source.unsplash.com/random/400×300?technology,Bot&ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80" alt="Whitney leaning against a railing on a downtown street">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-green-600 via-green-600 opacity-90"></div>
+                                    <img class="rounded-lg shadow-lg object-cover object-center" :src="article.coverimage" alt="Whitney leaning against a railing on a downtown street">
+                                    <div class="absolute inset-0" :class="article.bgeffect"></div>
                                 </div>
                                 <figcaption class="mt-3 flex text-sm text-gray-500">
                                     <span class="ml-2"></span>
