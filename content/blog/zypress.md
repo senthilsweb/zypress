@@ -105,7 +105,7 @@ In the year, 2019, I got introduced to Vue.JS then to tailwindcss and Nuxt.js an
 
 ## Getting started
 
-Follow the [documentaion](/docs/installation) to learn how to get zypress setup and deploy
+Follow the [documentaion](/docs/zypress) to learn how to get zypress setup and deploy
 
 
 
