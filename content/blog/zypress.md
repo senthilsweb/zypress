@@ -109,7 +109,7 @@ The primary requirement I built <badge>Zypress</badge> is to power my personal w
 
 ## Getting started
 
-Follow the [documentaion](/docs/getting-started) to learn how to get zypress setup and deploy
+Follow the [documentaion](/docs) to learn how to get zypress setup and deploy
 
 
 
