@@ -7,7 +7,7 @@ website:
 background: 
 introduction: 
 industries: []
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog

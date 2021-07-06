@@ -42,8 +42,5 @@ I got back into writing to share my thoughts and reusable piece of work for the 
 
 All of the work in this website which includes every piece of technical details has been hand crafted using modern web frameworks, tools and technologies and it is in rigorous development. 
 
-<alert>
-You may find the contents copied from Nuxt developer portal and some syntetic test data, I am in the process of fixing defects and clearing test contents. Please beran with me.
-</alert>
 
 
