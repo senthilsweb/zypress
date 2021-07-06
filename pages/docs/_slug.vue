@@ -6,7 +6,7 @@
             <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
                 <!--<LeftNavColor/>-->
                 <LeftNavColor :data="links" />
-                <docnav :data="menu" :title="docs.title"/>
+                <docnav :data="menu" :title="docs.title" />
             </nav>
         </div>
     </div>
@@ -23,22 +23,22 @@
                     </div>
                     <!--Body (Ends)-->
                     <!--Footer (Starts)-->
-                        <div class="flex leading-6 font-medium">
-                            <NuxtLink v-if="prev" :to="prev.path" class="flex mr-8 transition-colors duration-200 hover:text-gray-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                                </svg>
-                                {{ prev.title }}
-                            </NuxtLink>
-                            <NuxtLink v-if="next" :to="next.path" class="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
-                                {{ next.title }}
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </NuxtLink>
-                        </div>
-                        <div class="mt-12 border-t border-gray-200 pt-6 text-right"><a class="mt-10 text-sm hover:text-gray-900" href="/">Edit this page on GitHub</a></div>
-                    
+                    <div class="flex leading-6 font-medium">
+                        <NuxtLink v-if="prev" :to="prev.path" class="flex mr-8 transition-colors duration-200 hover:text-gray-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            {{ prev.title }}
+                        </NuxtLink>
+                        <NuxtLink v-if="next" :to="next.path" class="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
+                            {{ next.title }}
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </NuxtLink>
+                    </div>
+                    <div class="mt-12 border-t border-gray-200 pt-6 text-right"><a class="mt-10 text-sm hover:text-gray-900" href="/">Edit this page on GitHub</a></div>
+
                     <!--Footer (Ends)-->
                 </main>
                 <!--Main (Ends)-->
@@ -67,9 +67,21 @@ export default {
         toc,
         docnav
     },
-     data() {
+    data() {
         return {
-            mobileNav: false
+            mobileNav: false,
+            title: '',
+            description: ''
+        }
+    },
+    head() {
+        return {
+            title: this.docs.title,
+            meta: [{
+                hid: 'description',
+                name: 'description',
+                content: this.docs.description
+            }]
         }
     },
     created() {
@@ -93,7 +105,7 @@ export default {
             .sortBy('createdAt', 'asc')
             .surround(params.slug)
             .fetch()
-         const links = await $content('settings').fetch()
+        const links = await $content('settings').fetch()
         return {
             menu,
             docs,
@@ -117,13 +129,3 @@ export default {
     fetchOnServer: false
 }
 </script>
-
-<style>
-/*a.nuxt-link-exact-active {
-    @apply bg-green-300;
-}
-
-a.nuxt-link-exact-active {
-    @apply border-green-900;
-}*/
-</style>

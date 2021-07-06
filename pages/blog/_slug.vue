@@ -39,7 +39,7 @@
                         <div v-if="article.coverimage" class="relative text-base mx-auto max-w-prose lg:max-w-none">
                             <figure>
                                 <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                                    <img class="rounded-lg shadow-lg object-cover object-center" :src="article.coverimage" alt="Whitney leaning against a railing on a downtown street">
+                                    <img class="rounded-lg shadow-lg object-cover object-center " :src="article.coverimage" alt="Whitney leaning against a railing on a downtown street">
                                     <div class="absolute inset-0" :class="article.bgeffect"></div>
                                 </div>
                                 <figcaption class="mt-3 flex text-sm text-gray-500">

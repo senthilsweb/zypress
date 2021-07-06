@@ -52,6 +52,7 @@
             <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
     </button>
+    <!--Floating Menu button in mobileview (End)-->
 </div>
 </template>
 
