@@ -15,7 +15,7 @@ link: https://codesandbox.io/embed/nuxt-content-l164h?hidenavigation=1&theme=dar
 
 # Introduction
 
-![background](https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/0001_xwkovt.svg)
+![background](https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg)
 
 Zypress is an open source, professional publishing website built on a modern Jamstack technology stack — Vue.js, Nuxt.js, TailwindCss and Nuxt-content for documentation.
 

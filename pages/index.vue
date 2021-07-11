@@ -61,7 +61,7 @@
                     </div>
                     <!--Body (Ends)-->
                     <!--Footer (Starts)-->
-                    <div class="mt-12 border-t border-gray-200 pt-6 text-right"><a class="mt-10 text-sm hover:text-gray-900" href="/">Edit this page on GitHub</a></div>
+                    <div class="mt-12 border-t border-gray-200 pt-6 text-right"><a class="mt-10 text-sm hover:text-gray-900" href="/"></a></div>
                     <!--Footer (Ends)-->
                 </main>
                 <!--Main (Ends)-->

@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <div class="pt-2 pb-2 sticky p-2 top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex">
+    <div v-if="!this.$route.query.print" class="pt-2 pb-2 sticky p-2 top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto bg-white flex-none flex">
         <div class="flex-none pl-4 sm:pl-6 xl:pl-8 flex items-center border-b border-gray-200 lg:border-b-0 lg:w-60 xl:w-72">
             <a class="w-10 md:w-auto" href="/">
                 <span class="sr-only">Personal website</span>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full max-w-7xl mx-auto">
+    <div class="w-full mx-auto" :class="this.$route.query.print=='true'? 'max-w-8xl' : 'max-w-7xl'">
         <nuxt />
     </div>
     <!--Floating Menu button in mobileview (Start)-->

@@ -5,8 +5,8 @@
             <div :class="mobileNav==false? 'hidden' : 'block'" class="lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
             <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
                 <!--<LeftNavColor/>-->
-                <LeftNavColor :data="links" />
-                <docnav :data="menu" :title="docs.title" />
+                <LeftNavColor v-if="!this.$route.query.print" :data="links" />
+                <docnav v-if="!this.$route.query.print" :data="menu" :title="docs.title" />
             </nav>
         </div>
     </div>
@@ -37,8 +37,6 @@
                             </svg>
                         </NuxtLink>
                     </div>
-                    <div class="mt-12 border-t border-gray-200 pt-6 text-right"><a class="mt-10 text-sm hover:text-gray-900" href="/">Edit this page on GitHub</a></div>
-
                     <!--Footer (Ends)-->
                 </main>
                 <!--Main (Ends)-->
@@ -46,7 +44,7 @@
             <div class="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
                 <div class="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">
                     <div class="mb-8">
-                        <toc :data="docs.toc" />
+                        <toc v-if="!this.$route.query.print" :data="docs.toc" />
                     </div>
                 </div>
             </div>
