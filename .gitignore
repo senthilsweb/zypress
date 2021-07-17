@@ -139,5 +139,4 @@ lib-cov
 dist
 zypress
 zypress-*
-.temp
 *.tar

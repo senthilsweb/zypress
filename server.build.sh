@@ -69,5 +69,5 @@ else
 fi
 echo $DIST$INSTALL_BUNDLE
 tar -czvf $DEST$INSTALL_BUNDLE -C $DIST .
-rm -rf $DEST
+#rm -rf $DEST
 echo "Build complete"
