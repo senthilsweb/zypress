@@ -68,6 +68,6 @@ else
     sed -i 's/{{tar_file}}/'$INSTALL_BUNDLE'/g' $DEST$APP_NAME'.install.md'
 fi
 echo $DIST$INSTALL_BUNDLE
-tar -czvf $DIST$INSTALL_BUNDLE -C $DEST .
-#rm -rf $DEST
+tar -czvf $DEST$INSTALL_BUNDLE -C $DIST .
+rm -rf $DEST
 echo "Build complete"
