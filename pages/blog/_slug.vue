@@ -25,7 +25,7 @@
                         <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{article.title}}</h3>
                     </div>
                 </div>
-                <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-2">
                     <div class="relative lg:row-start-1 lg:col-start-2">
                         <svg class="hidden lg:block absolute top-20 right-0 -mt-20 -mr-20" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
                             <defs>
@@ -46,7 +46,6 @@
                                 </figcaption>
                             </figure>
                         </div>
-
                     </div>
                     <div class="mt-8 lg:mt-0">
                         <article class="prose md:prose-lg">

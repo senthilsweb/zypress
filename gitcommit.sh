@@ -7,5 +7,5 @@ if [ ! -z "$1" -a "$1" != " " ]; then
 fi
 git commit -m "$str"
 git branch -M main
-git remote add origin 
+#git remote add origin 
 Git push -u origin main

@@ -33,6 +33,67 @@ This requires `Go` to be installed in your machine and configured in your `PATH`
 
 Running the website directlly by executing a single binary will be super helpful to deploy the website (any static web site) on-prem or to share your work privately with anyone or your client privately as email attachment or upload in a dropbox / google drive. The size of the binary is `< 10mb`.
 
+## Build zypress binaries
+
+### Simple
+
+```
+go build main.go -o zypress-server
+```
+
+or
+
+### Advanced 
+
+A utility bash script provided to create the following artifacts:
+
+* Build and generate the binaries for Linux, Mac and Windows for both 32 bit and 64 bit operating system
+* Linux systemd service file to run `zypress-server` as service with auto-restart during server reboot
+* `install.sh` utility shell script
+* `readme.md` file
+* release bundle as `tar' file.
+
+```
+sh server.build.sh
+```
+
+
+
+## How to run zypress server?
+
+```
+./zypress-server [-p] [-e] [-s] [-i] [-d] 
+```
+
+* [-p] port. Default value is `8080`
+* [-e] environment. Default value is `dev`
+* [-s] Website source type. Default value is `embed` meaning the website source is embedded inside the binary.
+* [-i] index document to serve. Default value is `index.html`
+* [-d] Directory where the website source is located. Default value is `./dist` relative to the `zypress` server. 
+
+
+<alert type="info">
+[-d] is considered when the source type is file-system
+</alert>
+
+
+Run with default configurations
+
+```
+./zypress-server
+```
+
+Overriden port to `5000`
+
+```
+./zypress-server -p 5000
+```
+
+Run with file-system mode. 
+
+```
+./zypress-server -p 5000 -e 'prod' -s 'fs' -f 'index.html' -d '/opt/www/zypresse'
+```
 
 
 ## References

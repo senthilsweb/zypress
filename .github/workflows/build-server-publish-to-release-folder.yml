@@ -1,0 +1,30 @@
+name: Golang Cross build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.16
+      id: go
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run shell script and build go pplication
+      run: |  
+        sh server.build.sh -xe
+    - name: Upload production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+          name: artifact-zypress-server
+          path: release/
+ 
