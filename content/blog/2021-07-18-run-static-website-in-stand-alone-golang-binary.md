@@ -1,5 +1,5 @@
 ---
-title: Deploy Zypress and any Static Website in a standalone Golang binary
+title: Deploy Zypress (or Static Website) in a standalone Golang binary
 path: 
 date: 2021-07-18
 client: 
@@ -16,6 +16,8 @@ tags:
   - Blog
   - Zypress
   - Website
+  - JAMSTACK
+  - CI/CD
 platforms: [Web, Mobile, Tablet]
 ---
 
