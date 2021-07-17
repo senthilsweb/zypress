@@ -1,5 +1,5 @@
 ---
-title: Host Zypress in Life-time free linux box from Oracle Clod Infrastructure (OCI)
+title: Host Zypress in Life-time free linux box from Oracle Cloud Infrastructure (OCI)
 path: 
 date: 2021-07-05
 client: 

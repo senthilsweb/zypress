@@ -138,3 +138,7 @@ lib-cov
 .nuxt
 dist
 zypress
+zypress-*
+.temp
+release
+*.tar
