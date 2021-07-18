@@ -1,14 +1,15 @@
 ---
 title: Start here for a quick overview of everything you need to know about Zypress
 path: 
-date: 2021-07-18
+date: 2021-07-15
+status: published
 client: 
 website: 
 background: 
 introduction: 
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: 'https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg'
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1626572080/senthilsweb.com/blog/zypress.png
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog

@@ -2,6 +2,7 @@
 title: Zypress, Open-source Jamstack framework created using NuxtJS (Vue.js) + Tailwindcss
 path: 
 date: 2021-07-04
+status: published
 client: 
 website: 
 background: 

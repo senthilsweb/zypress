@@ -2,13 +2,14 @@
 title: Host Zypress in Life-time free linux box from Oracle Cloud Infrastructure (OCI)
 path: 
 date: 2021-07-05
+status: published
 client: 
 website: 
 background: 
 introduction: 
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: 'https://i2.wp.com/www.i2coalition.com/wp-content/uploads/2018/10/Oracle-Cloud-Infrastructure.png?w=1500&ssl=1'
+coverimage: 'https://res.cloudinary.com/nathansweb/image/upload/v1626571705/senthilsweb.com/blog/Oracle-Cloud-Infrastructure_ezediy.png'
 #bgeffect: 'bg-gradient-to-t from-green-300 via-red-100 opacity-90'
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png

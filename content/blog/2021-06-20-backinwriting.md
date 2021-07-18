@@ -2,13 +2,14 @@
 title: Got back into blog writing.
 path: 
 date: 2021-06-20
+status: published
 client: 
 website: 
 background: 
 introduction: 
 industries: []
 #coverimage: https://source.unsplash.com/random
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/h_300,w_400,ar_16:9,c_fill,g_auto,e_sharpen/v1625528539/bird-01.jpg
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1625528539/bird-01.jpg
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog

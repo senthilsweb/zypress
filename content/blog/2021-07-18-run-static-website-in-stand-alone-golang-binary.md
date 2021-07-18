@@ -1,7 +1,8 @@
 ---
 title: Deploy Zypress (or Static Website) in a standalone Golang binary
 path: 
-date: 2021-07-18
+date: 2021-07-17
+status: published
 client: 
 website: 
 background: 

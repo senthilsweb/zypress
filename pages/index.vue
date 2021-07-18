@@ -15,6 +15,7 @@
                 <!--Main (Starts)-->
                 <main class="mx-auto max-w-7xl">
                     <!--Body (Starts)-->
+                    
                     <div class="inset-0">
                         <div v-for="article of articles" :key="article.slug" class="p-2">
                             <NuxtLink :to="'blog/' + article.slug" class="block">
@@ -22,7 +23,7 @@
                                     {{article.title}}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">
-                                    {{article.description}}
+                                    {{article.description | truncate(250) }}
                                 </p>
                             </NuxtLink>
                             <div class="mt-6 flex items-center">
@@ -40,14 +41,14 @@
                                     </p>
                                     <div class="flex space-x-1 text-sm text-gray-500">
                                         <time datetime="article.createdAt">
-                                            {{article.createdAt | moment("DD-MMM-YYYY")}}
+                                            {{article.date | moment("DD-MMM-YYYY")}}
                                         </time>
                                         <span aria-hidden="true">
-                                            &middot;
+                                            <!--&middot;-->
                                         </span>
                                         <!--<ReadingTime :content="article.body"></ReadingTime>-->
                                         <span aria-hidden="true">
-                                            &middot;
+                                            <!--&middot;-->
                                         </span>
                                         <span>
                                             <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium" :class="article.type=='Blog' && 'bg-indigo-100 text-indigo-800' || article.type=='Article' && 'bg-pink-100 text-pink-800' || article.type=='Case Study' && 'bg-green-100 text-green-800'">
@@ -96,6 +97,12 @@ export default {
             mobileNav: false
         }
     },
+    filters: {
+        truncate(val, len) {
+            let n = (len === undefined) ? 5 : len;
+            return s(val).truncate(n).capitalize().value()
+        }
+    },
     created() {
         this.$nuxt.$on('evtFloatingButtonClick', (data) => {
             this.mobileNav = !this.mobileNav
@@ -109,8 +116,8 @@ export default {
         params
     }) {
         const articles = await $content('blog', params.slug)
-            .only(['title', 'description', 'coverimage', 'slug', 'tags', 'type', 'author', 'avatar', 'createdAt'])
-            .sortBy('createdAt', 'desc')
+            .only(['title', 'description', 'coverimage', 'slug', 'tags', 'type', 'author', 'avatar', 'createdAt', 'date'])
+            .sortBy('date', 'desc')
             .fetch()
         const teams = await $content('profile/teams').fetch()
         const about = await $content('profile/about').fetch()
