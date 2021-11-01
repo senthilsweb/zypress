@@ -1,7 +1,7 @@
 ---
 title: How to create local DNS in Mac OS for Kubernetes Ingress testing?
 path: 
-date: 2021-10-31
+date: 2021-10-28
 status: published
 client: 
 website: 
@@ -17,7 +17,7 @@ tags:
   - Kubernetes
   - Blog
   - CI/CD
-  - Gitopsa
+  - Gitops
 platforms: [Web, Mobile, Tablet]
 ---
 
