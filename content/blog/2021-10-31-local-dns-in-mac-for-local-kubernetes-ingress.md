@@ -27,12 +27,12 @@ Often times we need a way to simulate local domain name pointing to your `api` o
 
 This blog post will play as foundation for my upcoming kubernetes articles. Follow the below steps to setup your local Domain Name Service.
 
-1. create a new ip
+1. create a new ip e.g. `10.0.0.1`
 ```
 sudo ifconfig lo0 10.0.0.1 alias
 ```
 
-2. Forward the new ip address with port 80 `10.0.0.1:80` to your local `api` or `web` running in different ports, in this example my api running in port `:3000`
+2. Forward the new ip address with port 80 `10.0.0.1:80` to your local `api` or `web` running in different ports, in this example my api is running in port `:3000`
 
 ```
 echo "rdr pass on lo0 inet proto tcp from any to 10.0.0.1 port 80 -> 127.0.0.1 port 3000" | sudo pfctl -ef -
