@@ -1,5 +1,5 @@
 ---
-title: How to expose apps running in your home lab server securely to public internet thru cloudflare tunnel
+title: How to expose apps running in your home lab server securely to public internet thru cloudflare tunnel?
 path: 
 date: 2021-11-07
 status: published
