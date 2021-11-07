@@ -85,7 +85,7 @@ Run the tunnel pointing to your local website url. In my case, I am running graf
 
 ## Cloudflared Features
 
-<list :items="fatures"></list>
+<list :items="features"></list>
 
 ## Cloudflared shortcomings
 
