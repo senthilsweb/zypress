@@ -1,5 +1,5 @@
 ---
-title: Open sourced multipurpose Go API Server can be deployed 100% free in netlify
+title: Open sourced new Go API Server which can be deployed 100% free in Netlify
 path: 
 date: 2021-10-31
 status: published
