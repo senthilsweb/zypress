@@ -1,5 +1,5 @@
 ---
-title: Expose apps running in your home lab server securely to public internet thru cloudflare tunnel
+title: How to expose apps running in your home lab server securely to public internet thru cloudflare tunnel
 path: 
 date: 2021-11-07
 status: published
@@ -43,7 +43,7 @@ This post will guide you to expose your local development websites and webhooks 
 
 ## Use cases
 
-Listed some of the common usecases where tunneling softwares are handy 
+Common usecases where tunneling softwares will be handy
 
 <list :items="usecases"></list>
 
@@ -62,15 +62,30 @@ Listed some of the common usecases where tunneling softwares are handy
 
 cd into the folder where your downloaded cloudflared
 
-```
-cd [path where your downloaded cloudflared]/
-```
+<code-group>
+<code-block label="Bash" active>
+
+  ```bash
+  cd [path where your downloaded cloudflared]/
+  ```
+</code-block>
+</code-group>
+
 
 Run the tunnel pointing to your local website url. In my case, I am running grafana in a docker container at port 3000
 
-```
-./cloudflared tunnel --url http://localhost:3000
-```
+<code-group>
+<code-block label="Bash" active>
+
+  ```bash
+  ./cloudflared tunnel --url http://localhost:3000
+  ```
+</code-block>
+</code-group>
+
+## Cloudflared Features
+
+<list :items="fatures"></list>
 
 ## Cloudflared shortcomings
 
@@ -80,11 +95,16 @@ The cloudflared tunneling client doesn't support non http protocols (i.e. `tcp`)
 
 [ngrok](https://ngrok.com/download) supports both http and tcp however the free version supports just one instance of `ngrok`. 
 
-> Expose MS SQL server running in your local machine at port #. 1433
+Expose MS SQL server running in your local machine at port #. 1433
 
-```
-./ngrok tcp 1433
-```
+<code-group>
+<code-block label="Bash" active>
+
+  ```bash
+  ./ngrok tcp 1433
+  ```
+</code-block>
+</code-group>
 
 ## References:
 
